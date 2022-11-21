@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Home </title>
+  <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}" />
+</head>
+
+<body>
+  <div class="container2">
+    <h1>Select the type of information</h1>
+    <br>
+    <form id="package_form" action="" method="post">
+      <div class="panel-body">
+        <input type="submit" name="action" value="User">
+      </div>
+      <div class="panel-body">
+        <input type="submit" name="action" value="Disease">
+      </div>
+      <div class="panel-body">
+        <input type="submit" name="action" value="Data">
+      </div>
+      <div class="panel-body">
+        <input type="submit" name="action" value="Query">
+      </div>
+    </form>
+  </div>
+  <a href="/" class="btn btn">Logout</a>
+</body>

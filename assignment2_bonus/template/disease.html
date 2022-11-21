@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>DISEASE DB</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+</head>
+
+<body>
+  <body>
+    
+    <h2 style="text-align:center"> Disease Database </h2>
+    <a class="btn btn-primary" href="createdis">Add Disease</a>
+    <a class="btn btn-primary" href="searchdis">Search Disease</a>
+    <a class="btn btn-primary" href="home">Back to select</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>disease_code</td>
+          <td>pathogen</td>
+          <td>description</td>
+          <td>id</td>
+          <td>CRUD</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for column in diseasedata %}
+        <tr>
+          <td>{{column[0]}}</td>
+          <td>{{column[1]}}</td>
+          <td>{{column[2]}}</td>
+          <td>{{column[3]}}</td>
+          <td width="150">
+            <a href="/editdis/{{column[0]}}" class="btn btn-secondary btn-sm">EDIT</a>
+            <a href="/deletedis/{{column[0]}}" class="btn btn-secondary btn-sm">DELETE</a>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a class="btn btn-primary" href="createdtype">Add Disease Type</a>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>description</td>
+            <td>CRUD</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for col in dtypedata %}
+          <tr>
+            <td>{{col[0]}}</td>
+            <td>{{col[1]}}</td>
+            <td width="150">
+              <a href="/editdtype/{{col[0]}}" class="btn btn-secondary btn-sm">EDIT</a>
+              <a href="/deletedtype/{{col[0]}}" class="btn btn-secondary btn-sm">DELETE</a>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="creatediscover">Add Discover Data</a>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>country name</td>
+            <td>disease_code</td>
+            <td>first_enc_date</td>
+            <td>CRUD</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for column in discoverdata %}
+          <tr>
+            <td>{{column[0]}}</td>
+            <td>{{column[1]}}</td>
+            <td>{{column[2]}}</td>
+            <td width="150">
+              <a href="/editdiscover/{{column[1]}}/{{column[0]}}" class="btn btn-secondary btn-sm">EDIT</a>
+              <a href="/deletediscover/{{column[1]}}/{{column[0]}}" class="btn btn-secondary btn-sm">DELETE</a>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    <!-- <a class="btn btn-primary" href="login">Logout</a> -->
+  </body>

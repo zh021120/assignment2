@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>USER DB</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+</head>
+
+<body>
+  <body>
+    
+    <h2 style="text-align:center"> User Database </h2>
+    <a class="btn btn-primary" href="createuser">Add New User</a>
+    <a class="btn btn-primary" href="home">Back to select</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>e-mail</td>
+          <td>name</td>
+          <td>surname</td>
+          <td>salary</td>
+          <td>phone number</td>
+          <td>country</td>
+          <td>CRUD</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for column in usersdata %}
+        <tr>
+          <td>{{column[0]}}</td>
+          <td>{{column[1]}}</td>
+          <td>{{column[2]}}</td>
+          <td>{{column[3]}}</td>
+          <td>{{column[4]}}</td>
+          <td>{{column[5]}}</td>
+          <td width="150">
+            <a href="/edit/{{column[0]}}" class="btn btn-secondary btn-sm">EDIT</a>
+            <a href="/delete/{{column[0]}}" class="btn btn-secondary btn-sm">DELETE</a>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a class="btn btn-primary" href="login">Logout</a>
+  </body>

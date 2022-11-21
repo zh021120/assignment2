@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}" />
+</head>
+<body>
+<div class="container">
+        <p>
+        <h1>Update Record of {{user.email}} about {{user.disease_code}} in {{user.cname}}</h1>
+        </p>
+        <form action="/updaterec/{{user.email}}/{{user.cname}}/{{user.disease_code}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="total_deaths" value="{{user.total_deaths}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="total_patients" value="{{user.total_patients}}" class="form-control">
+          </div>
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+          </div>
+        </form>
+  </div> 
+</body>

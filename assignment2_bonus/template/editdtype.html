@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}" />
+  <title>{{user.id}}</title>
+</head>
+<body>
+<div class="container">
+        <p>
+        <h1>Update Disease Type {{user.id}}</h1>
+        </p>
+        <form action="/updatedtype/{{user.id}}" method="POST">
+          <div class="form-group">
+            <input type="text" name="description" value="{{user.description}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Update</button>
+          </div>
+        </form>
+  </div> 
+</body>

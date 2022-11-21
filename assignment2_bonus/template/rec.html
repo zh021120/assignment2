@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>RECORD DB</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+</head>
+
+<body>
+  <body>
+    
+    <h2 style="text-align:center"> Record Database </h2>
+    <a class="btn btn-primary" href="createrec">Add New Record</a>
+    <a class="btn btn-primary" href="searchrec">Search Record</a>
+    <a class="btn btn-primary" href="home">Back to select</a>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>e-mail</td>
+          <td>country name</td>
+          <td>disease_code</td>
+          <td>death count</td>
+          <td>patient count</td>
+          <td>CRUD</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for column in recorddata %}
+        <tr>
+          <td>{{column[0]}}</td>
+          <td>{{column[1]}}</td>
+          <td>{{column[2]}}</td>
+          <td>{{column[3]}}</td>
+          <td>{{column[4]}}</td>
+          <td width="150">
+            <a href="/editrec/{{column[0]}}/{{column[1]}}/{{column[2]}}" class="btn btn-secondary btn-sm">EDIT</a>
+            <a href="/deleterec/{{column[0]}}/{{column[1]}}/{{column[2]}}" class="btn btn-secondary btn-sm">DELETE</a>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a class="btn btn-primary" href="createspec">Add Specialization</a>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>e-mail</td>
+            <td>CRUD</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for col in specializedata %}
+          <tr>
+            <td>{{col[0]}}</td>
+            <td>{{col[1]}}</td>
+            <td width="150">
+              <!-- <a href="/edit/{{col[0]}}" class="btn btn-secondary btn-sm">EDIT</a> -->
+              <a href="/deletespec/{{col[0]}}/{{col[1]}}" class="btn btn-secondary btn-sm">DELETE</a>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="addcountry">Add Country</a>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td>country name</td>
+            <td>population</td>
+            <td>CRUD</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for column in countrydata %}
+          <tr>
+            <td>{{column[0]}}</td>
+            <td>{{column[1]}}</td>
+            <td width="150">
+              <a href="/editcountry/{{column[0]}}" class="btn btn-secondary btn-sm">EDIT</a>
+              <a href="/deletecountry/{{column[0]}}" class="btn btn-secondary btn-sm">DELETE</a>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    <!-- <a class="btn btn-primary" href="login">Logout</a> -->
+  </body>

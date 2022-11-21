@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}" />
+</head>
+<body>
+<div class="container">
+        <p>
+        <h1>Record {{user.email}} {{user.cname}} {{user.disease_code}}</h1>
+        </p>
+            
+          <div class="form-group">
+            <label class="form-label">Death Count:</label>
+            <label class="form-label">{{user.total_deaths}}</label>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Patient Count:</label>
+            <label class="form-label">{{user.total_patients}}</label>
+          </div>
+          </div>
+  <a href="/home" class="btn btn-primary">Back to Menu</a>
+</body>

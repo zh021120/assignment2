@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <link rel="stylesheet" href="{{url_for('static', filename='s.css')}}" />
+  <title>Disease Type Details</title>
+</head>
+
+<body>
+  <div class="container">
+    <p>
+    <h1>Create Disease Type</h1>
+    </p>
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label class="form-label">ID:</label>
+        <input type="text" id="id" name="id" class="form-control" value="{{dtype[0]}}">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Description:</label>
+        <input type="text" id="description" name="description" class="form-control" value="{{dtype[1]}}">
+      </div>
+      <br /><br />
+      <button type="createdtype" class="btn btn-primary">Submit</button>
+      <a href="/home" class="btn btn-primary">Cancel</a>
+    </form>
+  </div>
+</body>
