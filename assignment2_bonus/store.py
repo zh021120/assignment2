@@ -1,8 +1,8 @@
 import os
 from supabase import create_client, Client
 
-url: str = os.environ.get("SUPABASE_URL")
-key: str = os.environ.get("SUPABASE_ANON_KEY")
+url: str = os.environ.get("https://qmamdjopqczccdglqoua.supabase.co")
+key: str = os.environ.get("zhanna2002nov")
 
 supabase: Client = create_client(url, key)
 
