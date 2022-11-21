@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, request, url_for, session
 import psycopg2
 from sqlalchemy import create_engine, text
 
-con = psycopg2.connect(database="testdata", user="postgres", password="12345", host="127.0.0.1", port="5432", sslmode='require')
+con = psycopg2.connect(database="testdata", user="postgres", password="12345", host="127.0.0.1", port="5432")
 
 engine = create_engine("postgresql+psycopg2://postgres:12345@localhost/testdata", echo=False)
 app = Flask(__name__, template_folder='template', static_folder='static')
